@@ -8,6 +8,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../common_widget/reusable_tableRow.dart';
 import 'package:http/http.dart' as http;
+import '../../../constants.dart';
 
 class DashBoardWithDrawContract extends StatefulWidget {
   const DashBoardWithDrawContract({Key? key}) : super(key: key);
@@ -90,10 +91,8 @@ class _DashBoardWithDrawContractState extends State<DashBoardWithDrawContract> {
       'Cookie':
           'connect.sid=s%3AmBcOuoyugB54QXZqpWGQQbK88si9NELb.HBHNqX4GA599IDUwztdjItc%2B6yrnEzELzfKGnwRfu8Q'
     };
-    var request = http.Request(
-        'GET',
-        Uri.parse(
-            'https://api.lockedvaultenterprises.com/api/admin/getallusers'));
+    var request =
+        http.Request('GET', Uri.parse('$BASE_URL/api/admin/getallusers'));
 
     request.headers.addAll(headers);
 

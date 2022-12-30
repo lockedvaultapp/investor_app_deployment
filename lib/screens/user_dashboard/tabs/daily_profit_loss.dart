@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:http/http.dart' as http;
+import '../../../constants.dart';
 
 class DailyProfitLoss extends StatefulWidget {
   const DailyProfitLoss({Key? key}) : super(key: key);
@@ -20,10 +21,8 @@ class _DailyProfitLossState extends State<DailyProfitLoss> {
       'Cookie':
           'connect.sid=s%3Akl5SvZTkz-3fQwmXsKewBlW05RKa_LjV.DHFs1ZvHP%2FbrrPgXXmCBrZotBftv9%2FU%2FFvo%2FRYTvVTo'
     };
-    var request = http.Request(
-        'GET',
-        Uri.parse(
-            'https://api.lockedvaultenterprises.com/api/user/week1/profit'));
+    var request =
+        http.Request('GET', Uri.parse('$BASE_URL/api/user/week1/profit'));
 
     request.headers.addAll(headers);
 
